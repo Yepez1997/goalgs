@@ -6,11 +6,11 @@
 package main
 
 import (
-	"fmt"
 	"sort"
 )
 
-func twosum(arr []int, target int, res *[]int) {
+//TwoSum -- returns indicies in arr where sum(i,j) == target
+func TwoSum(arr []int, target int, res []int) []int {
 	// index and val
 	hash := make(map[int]int)
 	for i, elem := range arr {
@@ -22,17 +22,13 @@ func twosum(arr []int, target int, res *[]int) {
 		complement := target - arr[j]
 		// this checks of val := hash[complement]
 		if val, ok := hash[complement]; ok {
-			*res = append(*res, j, val)
-			sort.Ints(*res)
-			break
+			res = append(res, j, val)
+			sort.Ints(res)
+			return res
 		}
 	}
+	return res
 }
 
 func main() {
-	arr := []int{1, 4, 5, 2, 4}
-	target := 7
-	res := []int{}
-	twosum(arr, target, &res)
-	fmt.Printf("%v\n", res)
 }
