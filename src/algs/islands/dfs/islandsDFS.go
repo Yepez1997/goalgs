@@ -10,6 +10,7 @@ func numIslands(grid [][]byte) int {
 		return count
 	}
 	row, col := len(grid), len(grid[0])
+	// iterate row first then col
 	for i := 0; i < row; i++ {
 		for j := 0; j < col; j++ {
 			if string(grid[i][j]) == "1" {
