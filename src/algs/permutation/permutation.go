@@ -7,15 +7,18 @@ import (
 )
 
 /* Given two strings find if there exists a permutation */
-func charList(s string) string {
+
+/* sortS sorts the string s*/
+func sortS(s string) string {
 	sSplit := strings.Split(s, "")
 	sort.Strings(sSplit)
 	return strings.Join(sSplit, "")
 
 }
 
+/* permutation returns turns if there exist a permutation */
 func permuation(s string, t string) bool {
-	if len(s) != len(t) || (charList(s) != charList(t)) {
+	if len(s) != len(t) || (sortS(s) != sortS(t)) {
 		return false
 	}
 	return true
