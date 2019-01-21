@@ -35,12 +35,19 @@ func uniquePaths(m int, n int) int {
 }
 
 func main() {
+	// Unique Paths I
 	n := 3
 	m := 7
 	uniquePathNum := uniquePaths(m, n)
 	fmt.Println(uniquePathNum)
+	// Unique Paths II
+	input := [][]int{{0, 0, 0},
+		{0, 1, 0},
+		{0, 0, 0}}
+
 }
 
+// Just use dp -> solution for uniquePaths one and uniquePaths two
 // 1. want to create m by n template to iterate
 // 2. keep track of all paths we go through
 // 3. run bfs or dfs
