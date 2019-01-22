@@ -3,33 +3,33 @@
 // subarrays whose sum equals to k
 package main
 
-func subArraysK(arr []int, k int) int {
-	// two pointer approach
-	left := 0
-	subArrayCount := 0
-	continousSum := 0
-	for right := 0; right < len(arr); right++ {
-		// check the first case
-		// keep incrementing right
-		for continousSum < k && left < right {
-			// if we exhausted all possible subarrys
-			if left == len(arr) {
-				break
-			}
-			continousSum += arr[left]
-		}
+import "fmt"
 
-		if continousSum == k {
-			subArrayCount = subArrayCount + 1
-			continousSum = 0
+// another implementation is to use a hashmap
+func subArraysK(arr []int, k int) int {
+	cache := make(map[int]int)
+	numSubArrs := 0
+	sum := 0
+
+	for i := 0; i < len(arr); i++ {
+		sum += arr[i]
+		if sum == k {
+			numSubArrs++
 		}
-		left++
+		if v, ok := cache[sum-k]; ok {
+			numSubArrs += v
+		}
+		if v, ok := cache[sum]; !ok {
+			cache[sum] = 1
+		} else {
+			cache[sum] = v + 1
+		}
 	}
-	return 0
+	return numSubArrs
 }
 
 // if it is a subarry increase k
-
+// [1,1,1], 2
 // 0 , 1
 // 1 , 1
 // 1 , 1
@@ -38,7 +38,8 @@ func subArraysK(arr []int, k int) int {
 func main() {
 	arr := []int{1, 1, 1}
 	target := 2
-	subArraysK(arr, k)
+	res := subArraysK(arr, target)
+	fmt.Println(res)
 	// solution should be two
 }
 
