@@ -36,22 +36,7 @@ func main() {
 	// [1,8,6,2,5,4,8,3,7] -> 49
 	input := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
 	result := container(input)
-	fmt.Println(result)
+
+
 
 }
-
-/*
-	heap, stack
-	maintain the current largest distance
-	waterheld = 0
-	j = 1
-	for i ... n - 1
-		if arr[i] < arr[j]
-			area = arr[i] *  arr[j]
-			if area > waterhelp:
-				waterheld = area
-
-		j++
-
-
-*/
