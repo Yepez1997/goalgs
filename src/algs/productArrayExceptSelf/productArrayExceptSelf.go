@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 // works for most cases
+// figure cases for zero
 // [2,3,5,7]
 // 105 35 21 15
 func products(nums []int) []int {
