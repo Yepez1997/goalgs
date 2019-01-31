@@ -9,19 +9,31 @@ import (
 // 2 -> B
 // hash modulo len of the alpabet
 // left overs would be the index of the new column
+// divide is the number of times in the list
+// that we had to go through for the first
+// the modulo is the remainder for the second letter
 func excelSheet(n int) string {
-	alphabet := "abcdefghijklmnopqrstuvwxyz"
-	column := ""
-	firstChar := alphabet[n%len(alphabet)]
+	var alphabet = "abcdefghijklmnopqrstuvwxyz"
+	fmt.Println(int(n / len(alphabet)))
+	fmt.Println(alphabet[int(n/len(alphabet))])
+	//firstChar := alphabet[int(n/len(alphabet))]
+	/*
+		if firstChar > 0 {
+			secondChar := alphabet[int(n%len(alphabet))]
+			column := firstChar + secondChar
+			return string(column)
+		}
 
-	fmt.Printf("%v", firstChar)
-	if n > len(alphabet) {
-		// second index is needed
-
-	}
-	return column
+		return string(firstChar)
+	*/
+	return " "
 }
 
 func main() {
-	excelSheet(10)
+	strOne := excelSheet(10)
+	//strTwo := excelSheet(28)
+	strThree := excelSheet(701)
+	fmt.Print(strOne)
+	//fmt.Print(strTwo)
+	fmt.Print(strThree)
 }
