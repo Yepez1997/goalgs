@@ -35,7 +35,7 @@ func main() {
 	//noProfit := sellStock(arr2)
 	arr3 := []int{1, 2}
 	errors := sellStock(arr3)
-	fmt.Println(profit)
+	 prfmt.Println(profit)
 	//fmt.Println(noProfit)
 	fmt.Println(errors)
 	// [1,2]
