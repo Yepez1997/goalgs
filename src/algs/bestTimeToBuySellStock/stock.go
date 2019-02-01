@@ -12,6 +12,7 @@ func sellStock(prices []int) int {
 		low := prices[i]
 		current := i
 		for low <= prices[current] && current < len(prices)-1 {
+			// current := current+1 ? and erase the bottom one ?
 			runningSum = (prices[current+1] - low)
 			//fmt.Println(prices[current])
 			if runningSum > maxSum {

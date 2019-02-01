@@ -19,9 +19,8 @@ type PriorityQueue struct {
 	pr map[Vertex]int
 }
 
-func (pq *PriorityQueue) Len() int { return len(pq.items) }
-
-// min priority queue
+/*Len, Less, Swap is part of the heap interface */
+func (pq *PriorityQueue) Len() int           { return len(pq.items) }
 func (pq *PriorityQueue) Less(i, j int) bool { return pq.pr[pq.items[i]] < pq.pr[pq.items[j]] }
 func (pq *PriorityQueue) Swap(i, j int) {
 	pq.items[i], pq.items[j] = pq.items[j], pq.items[i]
@@ -29,6 +28,7 @@ func (pq *PriorityQueue) Swap(i, j int) {
 	pq.m[pq.items[j]] = j
 }
 
+/*Push ... pushes an item onto the heap */
 func (pq *PriorityQueue) Push(x interface{}) {
 	n := len(pq.items)
 	item := x.(Vertex)
@@ -36,6 +36,7 @@ func (pq *PriorityQueue) Push(x interface{}) {
 	pq.items = append(pq.items, item)
 }
 
+/*Pop ... pop an item off the heap*/
 func (pq *PriorityQueue) Pop() interface{} {
 	old := pq.items
 	n := len(old)
@@ -50,12 +51,15 @@ func (pq *PriorityQueue) update(item Vertex, priority int) {
 	pq.pr[item] = priority
 	heap.Fix(pq, pq.m[item])
 }
+
+// part of the priority queue
 func (pq *PriorityQueue) addWithPriority(item Vertex, priority int) {
 	heap.Push(pq, item) // push then update
 	pq.update(item, priority)
 }
 
 const (
+	//Infinity -> infinity
 	Infinity      = int(^uint(0) >> 1)
 	Uninitialized = -1
 )
