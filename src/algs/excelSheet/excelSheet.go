@@ -4,11 +4,10 @@ import (
 	"fmt"
 )
 
-// hash modulo len of the alpabet
-// left overs would be the index of the new column
-// divide is the number of times in the list
-// that we had to go through for the first
-// the modulo is the remainder for the second letter
+// first letter is n // len(alphabet)
+// in essence we are figuring how many times to loop to get to the first index
+// second letter is n % len(alphabet)
+// in other words get the remaining left over words to fill in for the second index
 func excelSheet(n int) string {
 	var alphabet = "abcdefghijklmnopqrstuvwxyz" // easier if made into a list
 	firstChar := alphabet[int(n/len(alphabet))]
