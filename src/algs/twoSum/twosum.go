@@ -1,8 +1,3 @@
-/* author: Aureliano Yepez
-* Classic Two Sum Problem
-* O(n) time uses a hash/dict to store values
- */
-
 package main
 
 import (
