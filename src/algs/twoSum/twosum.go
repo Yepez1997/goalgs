@@ -12,7 +12,6 @@ func TwoSum(arr []int, target int, res []int) []int {
 		hash[elem] = i
 	}
 
-	// check if value is in the hash
 	for j := 0; j < len(arr); j++ {
 		complement := target - arr[j]
 		// this checks of val := hash[complement]
@@ -26,4 +25,5 @@ func TwoSum(arr []int, target int, res []int) []int {
 }
 
 func main() {
+
 }

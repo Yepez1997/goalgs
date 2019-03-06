@@ -22,5 +22,4 @@ func TestTwoSum(t *testing.T) {
 			t.Error("Test Failed: expected {} and got {}", test.out, TwoSum(test.arr, test.target, test.res))
 		}
 	}
-
 }

@@ -44,7 +44,6 @@ func main() {
 	input := [][]int{{0, 0, 0},
 		{0, 1, 0},
 		{0, 0, 0}}
-
 }
 
 // Just use dp -> solution for uniquePaths one and uniquePaths two
@@ -67,6 +66,7 @@ func main() {
 // from m - 1, n - 1 what are all the possible paths ?
 // how can we use our resources to generate a path
 // want to run the path n time ?
+//
 
 // given a 2 * 2 grid
 /*

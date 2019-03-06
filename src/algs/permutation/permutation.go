@@ -23,6 +23,8 @@ func permuation(s string, t string) bool {
 	}
 	return true
 }
+
+// or simple use a hashmap to update frequencies
 func main() {
 	oneStr := "ahjklsw"
 	twoStr := "ahjlews"
